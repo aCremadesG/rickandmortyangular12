@@ -1,0 +1,10 @@
+<div class="body">
+    <div class="row" *ngIf="charactersData">
+        <div class="character-container" *ngFor="let character of charactersData.results">
+            <app-character-card [character]="character"></app-character-card>
+        </div>
+    </div>
+    <div *ngIf="charactersData.info?.pages">
+        <app-pagination [pages]="charactersData.info.pages" (pageGo)="loadPage($event)"></app-pagination>
+    </div>
+</div>

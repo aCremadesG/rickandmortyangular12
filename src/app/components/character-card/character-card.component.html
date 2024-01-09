@@ -1,0 +1,15 @@
+<article class="card d-flex flex-column flex-sm-row" (click)="characterDetail(character.id)">
+    <img [src]="character.image" class="card-img-top" alt="no image">
+    <div class="card-body">
+      <h5 class="card-title">{{character.name}}</h5>
+      <p class="card-text"><i class="bi-circle-fill" [ngClass]="character.status.toLowerCase()"></i> {{character.status}} - {{character.species}}</p>
+      <div class="text-container">
+          <p class="card-text m-0">Last known location:</p>
+          <p class="m-0">{{character.location.name}}</p>
+      </div>
+      <div class="text-container">
+          <p class="card-text m-0">Place of origin:</p>
+          <p class="m-0">{{character.origin.name}}</p>
+      </div>
+    </div>
+</article>

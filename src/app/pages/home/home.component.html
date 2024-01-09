@@ -1,0 +1,7 @@
+<div class="d-flex justify-content-center flex-column align-items-center">
+    <div class="p-3 row d-flex justify-content-center" *ngIf="charactersData.length != 0">
+        <div class="character-container m-3 d-flex justify-content-center" *ngFor="let character of charactersData">
+            <app-character-card [character]="character"></app-character-card>
+        </div>
+    </div>
+</div>

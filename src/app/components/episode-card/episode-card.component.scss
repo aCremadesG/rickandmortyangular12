@@ -1,0 +1,9 @@
+.card{
+    display: flex;
+    width:32rem;
+    flex-direction: row;
+    background-color: #9DBEBB;
+    div{
+        min-width: 300px;
+    }
+}

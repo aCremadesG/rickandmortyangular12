@@ -1,0 +1,10 @@
+<div class="body">
+    <div class="row" *ngIf="episodesData">
+        <div class="episode-container" *ngFor="let episode of episodesData.results">
+            <app-episode-card [episode]="episode"></app-episode-card>
+        </div>
+    </div>
+    <div *ngIf="episodesData.info?.pages">
+        <app-pagination [pages]="episodesData.info.pages" (pageGo)="loadPage($event)"></app-pagination>
+    </div>
+</div>

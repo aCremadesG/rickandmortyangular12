@@ -1,0 +1,16 @@
+<main>
+    <article>
+        <div class="d-flex p-4">
+            <img [src]="characterData.image" class="card-img-top" alt="no image">
+            <div class="p-4">
+                <h1>{{characterData.name}}</h1>
+                <ul class="p-0">
+                    <li><p><i class="bi-circle-fill" [ngClass]="characterData.status.toLowerCase()"></i> {{characterData.status}} - {{characterData.species}}</p></li>
+                    <li class="d-flex"><p class="title pe-2">Gender: </p> <p>{{characterData.gender}}</p></li>
+                    <li class="d-flex"><p class="title pe-2">Place of origin: </p> <p>{{characterData.origin.name}}</p></li>
+                    <li class="d-flex"><p class="title pe-2">Last known location: </p> <p>{{characterData.location.name}}</p></li>
+                </ul>
+            </div>
+        </div>
+    </article>
+</main>

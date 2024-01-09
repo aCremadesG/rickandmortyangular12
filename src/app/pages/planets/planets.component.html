@@ -1,0 +1,10 @@
+<div class="body">
+    <div class="row" *ngIf="locationsData">
+        <div class="planet-container" *ngFor="let location of locationsData.results">
+            <app-planets-card [location]="location"></app-planets-card>
+        </div>
+    </div>
+    <div *ngIf="locationsData.info?.pages">
+        <app-pagination [pages]="locationsData.info.pages" (pageGo)="loadPage($event)"></app-pagination>
+    </div>
+</div>
