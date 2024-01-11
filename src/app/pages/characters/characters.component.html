@@ -1,6 +1,6 @@
-<div class="body">
-    <div class="row" *ngIf="charactersData">
-        <div class="character-container" *ngFor="let character of charactersData.results">
+<div class="d-flex flex-column align-items-center">
+    <div class="row d-flex justify-content-center p-3" *ngIf="charactersData">
+        <div class="justify-content-start d-block d-sm-flex mt-3 col-12 col-sm-6" [ngClass]="i%2 == 0 ? 'justify-content-sm-end':'justify-content-sm-start'" *ngFor="let character of charactersData.results; index as i">
             <app-character-card [character]="character"></app-character-card>
         </div>
     </div>

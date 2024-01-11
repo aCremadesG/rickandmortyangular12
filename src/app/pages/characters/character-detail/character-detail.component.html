@@ -1,15 +1,21 @@
 <main>
     <article>
-        <div class="d-flex p-4">
+        <div class="d-flex p-0 p-sm-4 flex-column flex-sm-row justify-content-start justify-content-sm-center">
             <img [src]="characterData.image" class="card-img-top" alt="no image">
-            <div class="p-4">
+            <div class="pt-4 ps-3 p-sm-4">
                 <h1>{{characterData.name}}</h1>
-                <ul class="p-0">
-                    <li><p><i class="bi-circle-fill" [ngClass]="characterData.status.toLowerCase()"></i> {{characterData.status}} - {{characterData.species}}</p></li>
-                    <li class="d-flex"><p class="title pe-2">Gender: </p> <p>{{characterData.gender}}</p></li>
-                    <li class="d-flex"><p class="title pe-2">Place of origin: </p> <p>{{characterData.origin.name}}</p></li>
-                    <li class="d-flex"><p class="title pe-2">Last known location: </p> <p>{{characterData.location.name}}</p></li>
-                </ul>
+                <dl>
+                    <dt>Status:</dt>
+                    <dd>{{characterData.status}} <i class="bi-circle-fill" [ngClass]="characterData.status.toLowerCase()"></i> </dd>
+                    <dt>Species:</dt>
+                    <dd>{{characterData.species}}</dd>
+                    <dt>Gender:</dt>
+                    <dd>{{characterData.gender}}</dd>
+                    <dt>Place of origin:</dt>
+                    <dd>{{characterData.origin.name}}</dd>
+                    <dt>Last known location:</dt>
+                    <dd>{{characterData.location.name}}</dd>
+                </dl>
             </div>
         </div>
     </article>

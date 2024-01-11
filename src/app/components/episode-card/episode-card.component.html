@@ -1,7 +1,7 @@
 <article class="card" (click)="episodeDetail(episode.id)">
     <div class="card-body">
-        <h5 class="card-title">{{episode.name}}</h5>
-        <p class="card-subtitle mb-2 text-muted">{{episode.episode}}</p>
-        <p class="card-text">Air date: {{episode.air_date}}</p>
+        <h5 class="card-title text-truncate">{{episode.name}}</h5>
+        <p class="card-subtitle mb-2 text-muted text-truncate">{{episode.episode}}</p>
+        <p class="card-text text-truncate">Air date: {{episode.air_date}}</p>
     </div>
 </article>

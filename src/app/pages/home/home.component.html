@@ -1,6 +1,6 @@
-<div class="d-flex justify-content-center flex-column align-items-center">
+<div class="d-flex flex-column align-items-center">
     <div class="p-3 row d-flex justify-content-center" *ngIf="charactersData.length != 0">
-        <div class="character-container m-3 d-flex justify-content-center" *ngFor="let character of charactersData">
+        <div class="justify-content-start d-block d-sm-flex mt-3 col-12 col-sm-6" [ngClass]="i%2 == 0 ? 'justify-content-sm-end':'justify-content-sm-start'" *ngFor="let character of charactersData; index as i">
             <app-character-card [character]="character"></app-character-card>
         </div>
     </div>
