@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
 import { CharacterService } from 'src/app/services/character.service';
-import { Info } from 'src/app/interfaces/info';
 import { Character } from 'src/app/interfaces/character';
+import { Component, OnInit } from '@angular/core';
+import { Info } from 'src/app/interfaces/info';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

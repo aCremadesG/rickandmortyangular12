@@ -1,5 +1,5 @@
 <nav aria-label="Page navigation example">
-    <ul class="pagination">
+    <ul class="pagination justify-content-center">
         <li class="page-item" *ngIf="actualPage !== 1"><a class="page-link" (click)="changePage(actualPage - 1)"><i class="bi-arrow-left"></i></a></li>
         <li class="page-item" *ngFor="let number of navArray"><a class="page-link" (click)="changePage(number)">{{number}}</a></li>
         <li class="page-item" *ngIf="actualPage !== pages"><a class="page-link" (click)="changePage(actualPage + 1)"><i class="bi-arrow-right"></i></a></li>

@@ -1,15 +1,14 @@
-<article class="card d-flex flex-column flex-sm-row" (click)="characterDetail(character.id)">
+<article class="card d-flex flex-column flex-sm-row">
     <img [src]="character.image" class="card-img-top" alt="no image">
     <div class="card-body">
-      <h5 class="card-title">{{character.name}}</h5>
-      <p class="card-text"><i class="bi-circle-fill" [ngClass]="character.status.toLowerCase()"></i> {{character.status}} - {{character.species}}</p>
-      <div class="text-container">
-          <p class="card-text m-0">Last known location:</p>
-          <p class="m-0">{{character.location.name}}</p>
-      </div>
-      <div class="text-container">
-          <p class="card-text m-0">Place of origin:</p>
-          <p class="m-0">{{character.origin.name}}</p>
-      </div>
+        <h5 class="card-title">{{character.name}}</h5>
+        <dl>
+            <dt>Last known location:</dt>
+            <dd>{{character.location.name}}</dd>
+            <dt>Place of origin:</dt>
+            <dd>{{character.origin.name}}</dd>
+        </dl>
+        <p class="card-text"><i class="bi-circle-fill" [ngClass]="character.status.toLowerCase()"></i> {{character.status}} - {{character.species}}</p>
+        <p><a role="button" class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover link-opacity-25-hover pe-auto" (click)="characterDetail(character.id)">Know more...</a></p>
     </div>
 </article>
