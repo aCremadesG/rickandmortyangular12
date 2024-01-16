@@ -18,7 +18,7 @@ export class EpisodeService {
   }
 
   getMultipleEpisodes(ids: string){
-
+    return this.http.get(`${this.apiURL}/api/episode/${ids}`);
   }
 
   getFilteredEpisodes(){

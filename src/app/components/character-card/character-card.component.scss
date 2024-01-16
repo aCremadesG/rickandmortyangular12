@@ -4,7 +4,8 @@
         width: 300px;
     }
     img{
-        border-radius: 3%;
+        border-radius: var(--bs-border-radius) !important;
+        max-width: 40rem;
     }
 }
 

@@ -1,11 +1,12 @@
-<article class="card" (click)="locationDetail(location.id)">
-    <div class="card-body">
-        <h5 class="card-title">{{location.name}}</h5>
-        <div class="text-container">
-            <p class="card-text">Dimension: {{location.dimension}}</p>
-        </div>
-        <div class="text-container">
-            <p class="card-text">Type of place: {{location.type}}</p>
-        </div>
+<article class="card d-flex flex-row w-100">
+    <div class="card-body d-flex flex-column justify-content-space-between w-100">
+        <h5 class="card-title text-truncate">{{location.name}}</h5>
+        <dl>
+            <dt>Dimension:</dt>
+            <dd class="text-truncate">{{location.dimension}}</dd>
+            <dt>Type of place:</dt>
+            <dd class="text-truncate">{{location.type}}</dd>
+        </dl>
+        <p><a role="button" class="link-body-emphasis link-underline link-underline-opacity-0 link-underline-opacity-100-hover link-opacity-25-hover pe-auto" (click)="locationDetail(location.id)">Know more...</a></p>
     </div>
 </article>

@@ -12,7 +12,7 @@ export class CharacterDetailComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private CharacterService: CharacterService,
+    private characterService: CharacterService,
   ) { }
 
   characterData = {} as Character;
@@ -23,10 +23,9 @@ export class CharacterDetailComponent implements OnInit {
   }
 
   getCharacter(id: string){
-    this.CharacterService.getMultipleCharacters(id).subscribe({
+    this.characterService.getMultipleCharacters(id).subscribe({
       next: (res: any) => {
         this.characterData = res;
-        console.log(this.characterData);
       },
       error: (error: any) => {
         console.log(error);

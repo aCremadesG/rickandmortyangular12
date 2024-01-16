@@ -1,7 +1,11 @@
-<article class="card" (click)="episodeDetail(episode.id)">
-    <div class="card-body">
+<article class="card d-flex flex-row w-100">
+    <div class="card-body w-100">
         <h5 class="card-title text-truncate">{{episode.name}}</h5>
-        <p class="card-subtitle mb-2 text-muted text-truncate">{{episode.episode}}</p>
-        <p class="card-text text-truncate">Air date: {{episode.air_date}}</p>
+        <p class="card-subtitle mb-3 text-muted text-truncate">{{episode.episode}}</p>
+        <dl>
+            <dt>Air date:</dt>
+            <dd class="text-truncate">{{episode.air_date}}</dd>
+        </dl>
+        <p><a role="button" class="link-body-emphasis link-underline link-underline-opacity-0 link-underline-opacity-100-hover link-opacity-25-hover pe-auto" (click)="episodeDetail(episode.id)">Know more...</a></p>
     </div>
 </article>

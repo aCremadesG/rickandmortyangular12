@@ -18,7 +18,7 @@ export class LocationService {
   }
 
   getMultipleLocations(ids: string){
-
+    return this.http.get(`${this.apiURL}/api/location/${ids}`);
   }
 
   getFilteredLocations(){

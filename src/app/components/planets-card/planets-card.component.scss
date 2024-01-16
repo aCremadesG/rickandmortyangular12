@@ -1,23 +1,7 @@
 .card{
-    width:20rem;
-    height: 10rem;
     background-color: #9DBEBB;
-    div{
-        min-width: 300px;
-    }
 }
 
-.card-body{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
-
-.text-container{
-    p{
-        margin: 0;
-    }
-    .card-text{
-        color: #F4E9CD;
-    }
+dt{
+    color: #F4E9CD;
 }

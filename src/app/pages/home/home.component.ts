@@ -10,7 +10,7 @@ import { Info } from 'src/app/interfaces/info';
 export class HomeComponent implements OnInit {
 
   constructor(
-    private CharacterService: CharacterService
+    private characterService: CharacterService
   ) { }
 
   infoData = {} as Info;
@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   }
 
   getInfo(){
-    this.CharacterService.getCharacters().subscribe({
+    this.characterService.getCharacters().subscribe({
       next: (res: any) => {
         this.infoData = res.info;
         let rndInt = this.getRandomNumbers(6, this.infoData.count);
@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
   }
 
   getMultipleCharacters(rndInt: string){
-    this.CharacterService.getMultipleCharacters(rndInt).subscribe({
+    this.characterService.getMultipleCharacters(rndInt).subscribe({
       next: (res: any) => {
         this.charactersData = res;
       },
@@ -45,14 +45,19 @@ export class HomeComponent implements OnInit {
   }
 
   getRandomNumbers(i: number,number: number) {
+    let arrayID = [] as string[];
     let rndInt = ''
     for( let b = 0; b < i; b++){
-      if(b !== 0){
-        rndInt += ','
+      if(arrayID.length > 0){
+        do {
+          rndInt = Math.floor(Math.random() * number+1).toString();
+        } while(arrayID.find((cNum) => cNum == rndInt))
+      }else{
+        rndInt = Math.floor(Math.random() * number+1).toString();
       }
-      rndInt += Math.floor(Math.random() * number+1).toString();
+      arrayID.push(rndInt);
     }
-    return rndInt
+    return arrayID.join(',');
   }
 
 }

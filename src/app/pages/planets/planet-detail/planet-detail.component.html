@@ -1,1 +1,31 @@
-<p>planet-detail works!</p>
+<main class="mh p-3">
+    <article>
+        <section *ngIf="locationData.name != undefined">
+            <h1>{{locationData.name}}</h1>
+            <dl class="p-3">
+                <dt>Type:</dt>
+                <dd>{{locationData.type}}</dd>
+                <dt>Dimension:</dt>
+                <dd>{{locationData.dimension}}</dd>
+            </dl>
+        </section>
+        <section *ngIf="charactersData">
+          <div>
+            <h2>Residents:</h2>
+          </div>
+          <div id="carouselResidents" class="carousel slide">
+              <div class="carousel-inner">
+                <app-character-card class="carousel-item" [ngClass]="{'active': i == 0}" *ngFor="let character of charactersData; index as i" [character]="character"></app-character-card>
+              </div>
+              <button *ngIf="charactersData.length > 1" class="carousel-control-prev" type="button" data-bs-target="#carouselResidents" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button *ngIf="charactersData.length > 1" class="carousel-control-next" type="button" data-bs-target="#carouselResidents" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+          </div>
+        </section>
+    </article>
+</main>
