@@ -7,13 +7,17 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class PaginationComponent implements OnInit {
 
-  @Input() pages: number = 0;
+  //@Input() pages: number = 0;
+  pages: number = 0;
+  @Input() set newPages(value: number){
+    this.pages = value;
+    this.setArray();
+  }
   @Output() pageGo = new EventEmitter<number>();
   actualPage: number = 1;
   navArray: Array<number> = [];
 
   ngOnInit(): void {
-    this.setArray();
   }
 
   changePage( page: number ) {

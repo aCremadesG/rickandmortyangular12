@@ -2,13 +2,15 @@
     <article>
         <div *ngIf="characterData.name != undefined" class="d-flex p-0 p-sm-4 flex-column flex-sm-row justify-content-start justify-content-sm-center">
             <img [src]="characterData.image" class="card-img-top" alt="no image">
-            <div class="pt-4 ps-3 p-sm-4">
+            <div class="pt-4 ps-3">
                 <h1>{{characterData.name}}</h1>
                 <dl>
                     <dt>Status:</dt>
                     <dd>{{characterData.status}} <i class="bi-circle-fill" [ngClass]="characterData.status.toLowerCase()"></i> </dd>
                     <dt>Species:</dt>
                     <dd>{{characterData.species}}</dd>
+                    <dt *ngIf="characterData.type != ''">Type:</dt>
+                    <dd *ngIf="characterData.type != ''">{{characterData.type}}</dd>
                     <dt>Gender:</dt>
                     <dd>{{characterData.gender}}</dd>
                     <dt>Place of origin:</dt>

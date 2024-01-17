@@ -1,13 +1,16 @@
-<div class="d-flex flex-column align-items-center justify-content-center mh">
-    <div class="spinner-border" role="status" *ngIf="!charactersData">
+<main class="d-flex flex-column align-items-center justify-content-center mh">
+    <section class="spinner-border" role="status" *ngIf="!charactersData">
         <span class="sr-only">Loading...</span>
-    </div>
-    <div class="m-0 row d-flex justify-content-center p-3" *ngIf="charactersData">
+    </section>
+    <section class="m-0 row d-flex p-3" *ngIf="charactersData">
+        <div class="d-flex col-12 justify-content-center">
+            <app-character-filter (newFilters)="loadFilters($event)"></app-character-filter>
+        </div>
         <div class="justify-content-start d-block d-sm-flex mt-3 col-12 col-lg-6" [ngClass]="i%2 == 0 ? 'justify-content-sm-end':'justify-content-sm-start'" *ngFor="let character of charactersData.results; index as i">
             <app-character-card [character]="character"></app-character-card>
         </div>
-    </div>
-    <div *ngIf="charactersData.info?.pages">
-        <app-pagination [pages]="charactersData.info.pages" (pageGo)="loadPage($event)"></app-pagination>
-    </div>
-</div>
+    </section>
+    <section *ngIf="charactersData.info?.pages">
+        <app-pagination [newPages]="charactersData.info.pages" (pageGo)="loadPage($event)"></app-pagination>
+    </section>
+</main>

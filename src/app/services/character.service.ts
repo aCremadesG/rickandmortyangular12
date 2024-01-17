@@ -13,7 +13,7 @@ export class CharacterService {
     private http: HttpClient
   ) {}
 
-  getCharacters(page = 1){
+  getCharacters(page: number){
     return this.http.get(`${this.apiURL}/api/character?page=${page}`);
   }
 
@@ -21,7 +21,7 @@ export class CharacterService {
     return this.http.get(`${this.apiURL}/api/character/${ids}`);
   }
 
-  getFilteredCharacters(){
-    return this.http.get(`${this.apiURL}/api/character/`);
+  getFilteredCharacters(page: number, filters: string){
+    return this.http.get(`${this.apiURL}/api/character/?page=${page}${filters}`);
   }
 }

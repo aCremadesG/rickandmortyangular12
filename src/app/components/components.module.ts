@@ -7,6 +7,8 @@ import { RouterModule } from '@angular/router';
 import { PaginationComponent } from './pagination/pagination.component';
 import { EpisodeCardComponent } from './episode-card/episode-card.component';
 import { PlanetsCardComponent } from './planets-card/planets-card.component';
+import { CharacterFilterComponent } from './character-filter/character-filter.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,11 +17,13 @@ import { PlanetsCardComponent } from './planets-card/planets-card.component';
     HeaderComponent,
     PaginationComponent,
     EpisodeCardComponent,
-    PlanetsCardComponent
+    PlanetsCardComponent,
+    CharacterFilterComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   exports: [
     FooterComponent,
@@ -27,7 +31,8 @@ import { PlanetsCardComponent } from './planets-card/planets-card.component';
     CharacterCardComponent,
     PaginationComponent,
     EpisodeCardComponent,
-    PlanetsCardComponent
+    PlanetsCardComponent,
+    CharacterFilterComponent
   ]
 })
 export class ComponentsModule { }

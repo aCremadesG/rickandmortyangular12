@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   }
 
   getInfo(){
-    this.characterService.getCharacters().subscribe({
+    this.characterService.getCharacters(1).subscribe({
       next: (res: any) => {
         this.infoData = res.info;
         let rndInt = this.getRandomNumbers(6, this.infoData.count);

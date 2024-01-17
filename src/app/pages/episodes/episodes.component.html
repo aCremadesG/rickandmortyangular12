@@ -5,6 +5,6 @@
         </div>
     </div>
     <div *ngIf="episodesData.info?.pages" class="d-flex justify-content-center">
-        <app-pagination [pages]="episodesData.info.pages" (pageGo)="loadPage($event)"></app-pagination>
+        <app-pagination [newPages]="episodesData.info.pages" (pageGo)="loadPage($event)"></app-pagination>
     </div>
 </div>

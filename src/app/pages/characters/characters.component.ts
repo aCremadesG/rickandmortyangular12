@@ -16,14 +16,37 @@ export class CharactersComponent implements OnInit {
   ) {}
 
   charactersData = {} as Characters;
+  filters: string = "";
 
   ngOnInit(): void {
     this.getCharacters();
   }
 
-  async loadPage(page: number) {
+  loadFilters(newFilters: string){
+    console.log(newFilters);
+    if(newFilters == ""){
+      this.getCharacters();
+      return;
+    }
+    this.filters = newFilters;
+    this.getCharactersFiltered();
+  }
+
+  getCharactersFiltered(page=1){
+    this.CharacterService.getFilteredCharacters(page, this.filters).subscribe({
+      next: (res: any) => {
+        this.charactersData = res;
+      },
+      error: (error: any) => {
+        console.log(error);
+      }
+    });
+  }
+
+  loadPage(page: number) {
     this.ViewPortScroller.scrollToPosition([0,0]);
-    this.getCharacters(page);
+    if(this.filters == "")this.getCharacters(page);
+    else this.getCharactersFiltered(page);
   }
 
   getCharacters(page = 1){

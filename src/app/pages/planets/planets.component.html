@@ -5,6 +5,6 @@
         </div>
     </div>
     <div *ngIf="locationsData.info?.pages">
-        <app-pagination [pages]="locationsData.info.pages" (pageGo)="loadPage($event)"></app-pagination>
+        <app-pagination [newPages]="locationsData.info.pages" (pageGo)="loadPage($event)"></app-pagination>
     </div>
 </div>
