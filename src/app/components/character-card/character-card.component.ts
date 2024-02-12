@@ -17,7 +17,7 @@ export class CharacterCardComponent implements OnInit {
   }
 
   characterDetail(id: number){
-    this.router.navigate([`characters/${this.character.id}`])
+    this.router.navigate([`characters/${id}`])
   }
 
 }
